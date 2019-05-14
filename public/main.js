@@ -1,7 +1,4 @@
-const main = () => {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
-}
+const main = () => {}
 
 document.addEventListener('DOMContentLoaded', main)
+document.querySelector('.search').addEventListener('click', searchFuction)
