@@ -1,23 +1,20 @@
-let city = {}
-let zipcode = {}
-
 const getTempsFromAPI = () => {
-  fetch('https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=979aec3e332786db0d8259a92f2dbaa9')
-  .then(resp => {
-    if (resp.status === 200) {
+  document.querySelector('.temp').textContent = ' '
+  const city = document.querySelector('.city').value
+  console.log(city)
+  fetch(
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
+      city +
+      '&appid=979aec3e332786db0d8259a92f2dbaa9'
+  )
+    .then(resp => {
       return resp.json()
-    } else {
-      console.log('error')
-    }
-  })
-  .then(temp => {
-    document.querySelector('.temp').createElement('p').appendChild(temp)
-  }
-  fetch('https://api.openweathermap.org/data/2.5/weather?zip={zip code}&appid=979aec3e332786db0d8259a92f2dbaa9')
+    })
     .then(temp => {
-    document.querySelector('.temp').createElement('p').appendChild(temp)
-  })
-)
+      const temperature = document.createElement('h1')
+      temperature.textContent = { temp }.temp.main.temp
+      document.querySelector('.temp').appendChild(temperature)
+    })
 }
 const main = () => {}
 
