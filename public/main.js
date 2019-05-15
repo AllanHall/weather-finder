@@ -16,7 +16,16 @@ const getTempsFromAPI = () => {
       document.querySelector('.temp').appendChild(temperature)
     })
 }
-const main = () => {}
+const main = () => {
+  // researching adventure mode
+  /*  fetch(
+    'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyAM-z8URCzq8ikkg7575MrCtRo7nlYEiXw'
+  ).then(response => {
+    return response.json()
+  })
+  console.log()
+*/
+}
 
 document.addEventListener('DOMContentLoaded', main)
 document.querySelector('.search').addEventListener('click', getTempsFromAPI)
